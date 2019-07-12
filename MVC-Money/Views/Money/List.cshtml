@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVC_Money.Models.ViewModels.MoneyViewModel>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Money)
+        </th>
+    </tr>
+
+    @{
+        var i = 0;
+        foreach (var item in Model)
+        {
+            i++;
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => i)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Money)
+                </td>
+            </tr>
+        }
+    }
+
+</table>
